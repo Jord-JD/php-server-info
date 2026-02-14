@@ -11,8 +11,8 @@ composer require jord-jd/php-server-info
 ```php
 <?php
 
-use DivineOmega\ServerInfo\Server;
-use DivineOmega\SSHConnection\SSHConnection;
+use JordJD\ServerInfo\Server;
+use JordJD\SSHConnection\SSHConnection;
 
 require_once __DIR__.'/../vendor/autoload.php';
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace DivineOmega\ServerInfo;
+namespace JordJD\ServerInfo;
 
-use DivineOmega\SSHConnection\SSHConnection;
+use JordJD\SSHConnection\SSHConnection;
 
 class Server
 {

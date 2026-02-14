@@ -4,7 +4,7 @@
   "type": "library",
   "require": {
     "php": ">=7.1",
-    "divineomega/php-ssh-connection": "^2.0"
+    "jord-jd/php-ssh-connection": "^null.0"
   },
   "license": "LGPL-3.0-only",
   "authors": [
@@ -15,7 +15,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "DivineOmega\\ServerInfo\\": "src/"
+      "JordJD\\ServerInfo\\": "src/"
     }
   },
   "replace": {
@@ -23,7 +23,8 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "2.0-dev"
+      "dev-master": "3.0-dev"
     }
-  }
+  },
+  "require-dev": {}
 }

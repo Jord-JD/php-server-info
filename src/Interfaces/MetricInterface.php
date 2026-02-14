@@ -1,8 +1,8 @@
 <?php
 
-namespace DivineOmega\ServerInfo\Interfaces;
+namespace JordJD\ServerInfo\Interfaces;
 
-use DivineOmega\ServerInfo\Server;
+use JordJD\ServerInfo\Server;
 
 interface MetricInterface
 {

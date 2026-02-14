@@ -1,22 +1,22 @@
 <?php
 
-namespace DivineOmega\ServerInfo;
+namespace JordJD\ServerInfo;
 
-use DivineOmega\ServerInfo\Interfaces\MetricInterface;
-use DivineOmega\ServerInfo\Metrics\ActiveHttpConnection;
-use DivineOmega\ServerInfo\Metrics\ApacheServerRunning;
-use DivineOmega\ServerInfo\Metrics\CpuUsagePercentage;
-use DivineOmega\ServerInfo\Metrics\DiskUsagePercentage;
-use DivineOmega\ServerInfo\Metrics\LoadAverages;
-use DivineOmega\ServerInfo\Metrics\MemoryUsagePercentage;
-use DivineOmega\ServerInfo\Metrics\Hostname;
-use DivineOmega\ServerInfo\Metrics\MySqlServerRunning;
-use DivineOmega\ServerInfo\Metrics\NginxServerRunning;
-use DivineOmega\ServerInfo\Metrics\SwapUsagePercentage;
-use DivineOmega\ServerInfo\Metrics\TotalDiskSpaceBytes;
-use DivineOmega\ServerInfo\Metrics\TotalMemoryBytes;
-use DivineOmega\ServerInfo\Metrics\TotalSwapBytes;
-use DivineOmega\ServerInfo\Metrics\Uptime;
+use JordJD\ServerInfo\Interfaces\MetricInterface;
+use JordJD\ServerInfo\Metrics\ActiveHttpConnection;
+use JordJD\ServerInfo\Metrics\ApacheServerRunning;
+use JordJD\ServerInfo\Metrics\CpuUsagePercentage;
+use JordJD\ServerInfo\Metrics\DiskUsagePercentage;
+use JordJD\ServerInfo\Metrics\LoadAverages;
+use JordJD\ServerInfo\Metrics\MemoryUsagePercentage;
+use JordJD\ServerInfo\Metrics\Hostname;
+use JordJD\ServerInfo\Metrics\MySqlServerRunning;
+use JordJD\ServerInfo\Metrics\NginxServerRunning;
+use JordJD\ServerInfo\Metrics\SwapUsagePercentage;
+use JordJD\ServerInfo\Metrics\TotalDiskSpaceBytes;
+use JordJD\ServerInfo\Metrics\TotalMemoryBytes;
+use JordJD\ServerInfo\Metrics\TotalSwapBytes;
+use JordJD\ServerInfo\Metrics\Uptime;
 
 class Metrics
 {

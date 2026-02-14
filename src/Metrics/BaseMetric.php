@@ -1,9 +1,9 @@
 <?php
 
-namespace DivineOmega\ServerInfo\Metrics;
+namespace JordJD\ServerInfo\Metrics;
 
-use DivineOmega\ServerInfo\Interfaces\MetricInterface;
-use DivineOmega\ServerInfo\Server;
+use JordJD\ServerInfo\Interfaces\MetricInterface;
+use JordJD\ServerInfo\Server;
 
 abstract class BaseMetric implements MetricInterface
 {

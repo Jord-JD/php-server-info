@@ -1,6 +1,6 @@
 <?php
 
-namespace DivineOmega\ServerInfo\Metrics;
+namespace JordJD\ServerInfo\Metrics;
 
 class MySqlServerRunning extends BaseMetric
 {
