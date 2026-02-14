@@ -1,21 +1,29 @@
 {
-    "name": "divineomega/php-server-info",
-    "description": "Gets metrics on a server via an SSH connection",
-    "type": "library",
-    "require": {
-        "php": ">=7.1",
-        "divineomega/php-ssh-connection": "^2.0"
-    },
-    "license": "LGPL-3.0-only",
-    "authors": [
-        {
-            "name": "Jordan Hall",
-            "email": "jordan@hall05.co.uk"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "DivineOmega\\ServerInfo\\": "src/"
-        }
+  "name": "jord-jd/php-server-info",
+  "description": "Gets metrics on a server via an SSH connection",
+  "type": "library",
+  "require": {
+    "php": ">=7.1",
+    "divineomega/php-ssh-connection": "^2.0"
+  },
+  "license": "LGPL-3.0-only",
+  "authors": [
+    {
+      "name": "Jordan Hall",
+      "email": "jordan@hall05.co.uk"
     }
+  ],
+  "autoload": {
+    "psr-4": {
+      "DivineOmega\\ServerInfo\\": "src/"
+    }
+  },
+  "replace": {
+    "divineomega/php-server-info": "self.version"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "2.0-dev"
+    }
+  }
 }

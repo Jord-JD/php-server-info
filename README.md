@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-composer require divineomega/php-server-info
+composer require jord-jd/php-server-info
 ```
 
 ## Usage
