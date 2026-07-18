@@ -104,9 +104,11 @@ MariaDB process names.
 
 ## Compatibility
 
-PHP 7.1 through the current PHP 8.x releases are supported. Version 3 and the
-forthcoming version 4 of `jord-jd/php-ssh-connection` are accepted, allowing
-Composer to select the newest release compatible with the running PHP version.
+PHP 7.1 through the current PHP 8.x releases are supported. Versions 3, 4, and
+5 of `jord-jd/php-ssh-connection` are accepted, allowing Composer to select the
+newest release compatible with the running PHP version. PHP 7.1 installations
+will continue to receive SSH connection version 3 or 4 because version 5 needs
+PHP 7.2; this package's PHP minimum has not changed.
 
 ### Upgrading to 4.0
 
