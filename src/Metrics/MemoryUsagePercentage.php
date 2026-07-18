@@ -6,11 +6,12 @@ class MemoryUsagePercentage extends BaseMetric
 {
     public function populate()
     {
-        $used = (int) $this->connection->run('awk \'/^Mem/ {print $3}\' <(free)')->getOutput();
-        $total = (int) $this->connection->run('awk \'/^Mem/ {print $2}\' <(free)')->getOutput();
+        $output = $this->connection->run(
+            'awk \'/^MemTotal:/ {t=$2} /^MemAvailable:/ {a=$2} /^MemFree:/ {f=$2} /^Buffers:/ {b=$2} /^Cached:/ {c=$2} END {if (t>0) {if (a=="") a=f+b+c; printf "%.0f", (t-a)/t*100}}\' /proc/meminfo'
+        )->getOutput();
 
-        if ($used && $total) {
-            $this->value = (int) round($used / $total * 100);
+        if (is_numeric($output) && $output >= 0 && $output <= 100) {
+            $this->value = (int) $output;
         }
     }
 

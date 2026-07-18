@@ -7,7 +7,7 @@ class CpuUsagePercentage extends BaseMetric
     public function populate()
     {
         $output = $this->connection
-            ->run('top -n 1 -b | grep "%Cpu" | cut -d "," -f 4 | cut -d " " -f 2')
+            ->run('LC_ALL=C top -bn1 | awk \'/^%?Cpu/ {for (i=1; i<=NF; i++) if ($i ~ /^id,?$/) {gsub(/,/, "", $(i-1)); printf "%.1f", 100-$(i-1); exit}}\'')
             ->getOutput();
 
         if (!is_numeric($output)) {
@@ -15,14 +15,14 @@ class CpuUsagePercentage extends BaseMetric
             return;
         }
 
-        $idleCpu = (float) $output;
+        $usage = (float) $output;
 
-        if ($idleCpu < 0 || $idleCpu > 100) {
+        if ($usage < 0 || $usage > 100) {
             $this->value = null;
             return;
         }
 
-        $this->value = 100 - $idleCpu;
+        $this->value = $usage;
     }
 
     public function getName()

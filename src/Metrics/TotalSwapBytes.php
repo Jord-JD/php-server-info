@@ -6,11 +6,11 @@ class TotalSwapBytes extends BaseMetric
 {
     public function populate()
     {
-        $command = $this->connection->run('awk \'/^Swap/ {print $2}\' <(free)');
+        $command = $this->connection->run('awk \'/^SwapTotal:/ {printf "%.0f", $2 * 1024}\' /proc/meminfo');
 
         $output = $command->getOutput();
 
-        if ($output) {
+        if (is_numeric($output) && $output >= 0) {
             $this->value = (int) $output;
         }
     }

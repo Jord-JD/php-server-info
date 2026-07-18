@@ -6,9 +6,9 @@ class NginxServerRunning extends BaseMetric
 {
     public function populate()
     {
-        $output = $this->connection->run('ps -e | grep nginx')->getOutput();
+        $output = $this->connection->run('pgrep -x nginx >/dev/null 2>&1; printf $?')->getOutput();
 
-        $this->value = !empty($output);
+        $this->value = trim($output) === '0';
     }
 
     public function getName()

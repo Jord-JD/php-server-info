@@ -11,7 +11,12 @@ class LoadAverages extends BaseMetric
         $output = $command->getOutput();
 
         if ($output) {
-            $loadAverages = explode(' ', $output);
+            $loadAverages = preg_split('/\s+/', trim($output));
+
+            if (count($loadAverages) < 3 || !is_numeric($loadAverages[0]) || !is_numeric($loadAverages[1]) || !is_numeric($loadAverages[2])) {
+                return;
+            }
+
             $this->value = [
                 1  => (float) $loadAverages[0],
                 5  => (float) $loadAverages[1],

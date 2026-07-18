@@ -6,11 +6,12 @@ class SwapUsagePercentage extends BaseMetric
 {
     public function populate()
     {
-        $used = (int) $this->connection->run('awk \'/^Swap/ {print $3}\' <(free)')->getOutput();
-        $total = (int) $this->connection->run('awk \'/^Swap/ {print $2}\' <(free)')->getOutput();
+        $output = $this->connection->run(
+            'awk \'/^SwapTotal:/ {t=$2} /^SwapFree:/ {f=$2} END {if (t==0) print 0; else printf "%.0f", (t-f)/t*100}\' /proc/meminfo'
+        )->getOutput();
 
-        if ($used && $total) {
-            $this->value = (int) round($used / $total * 100);
+        if (is_numeric($output) && $output >= 0 && $output <= 100) {
+            $this->value = (int) $output;
         }
     }
 
