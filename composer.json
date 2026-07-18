@@ -4,7 +4,7 @@
   "type": "library",
   "require": {
     "php": ">=7.1",
-    "jord-jd/php-ssh-connection": "^3.0"
+    "jord-jd/php-ssh-connection": "^3.0||^4.0"
   },
   "license": "LGPL-3.0-only",
   "authors": [
@@ -18,13 +18,25 @@
       "JordJD\\ServerInfo\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "JordJD\\ServerInfo\\Tests\\": "tests/"
+    }
+  },
   "replace": {
     "divineomega/php-server-info": "self.version"
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "3.0-dev"
+      "dev-master": "4.0-dev"
     }
   },
-  "require-dev": {}
+  "require-dev": {
+    "phpunit/phpunit": "^7.5||^9.6||^10.5||^11.5||^12.5"
+  },
+  "config": {
+    "allow-plugins": {
+      "kylekatarnls/update-helper": false
+    }
+  }
 }

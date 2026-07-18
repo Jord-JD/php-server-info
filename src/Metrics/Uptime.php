@@ -10,7 +10,7 @@ class Uptime extends BaseMetric
 
         $output = $command->getOutput();
 
-        if ($output) {
+        if (is_numeric($output) && $output >= 0) {
             $this->value = (int) $output;
         }
     }

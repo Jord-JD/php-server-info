@@ -6,11 +6,11 @@ class TotalDiskSpaceBytes extends BaseMetric
 {
     public function populate()
     {
-        $command = $this->connection->run('df / --output=avail | tail -n 1');
+        $command = $this->connection->run('LC_ALL=C df -P -B1 / | awk \'NR == 2 {print $2}\'');
 
         $output = $command->getOutput();
 
-        if ($output) {
+        if (is_numeric($output) && $output >= 0) {
             $this->value = (int) $output;
         }
     }

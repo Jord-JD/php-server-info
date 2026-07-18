@@ -26,8 +26,8 @@ class Server
         return $this->connection;
     }
 
-    public function metrics(): Metrics
+    public function metrics(?array $metricClasses = null): Metrics
     {
-        return new Metrics($this);
+        return new Metrics($this, $metricClasses);
     }
 }

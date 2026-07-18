@@ -6,10 +6,9 @@ class ApacheServerRunning extends BaseMetric
 {
     public function populate()
     {
-        $output1 = $this->connection->run('ps -e | grep apache2')->getOutput();
-        $output2 = $this->connection->run('ps -e | grep httpd')->getOutput();
+        $output = $this->connection->run('pgrep -x apache2 >/dev/null 2>&1 || pgrep -x httpd >/dev/null 2>&1; printf $?')->getOutput();
 
-        $this->value = !empty($output1) || !empty($output2);
+        $this->value = trim($output) === '0';
     }
 
     public function getName()
